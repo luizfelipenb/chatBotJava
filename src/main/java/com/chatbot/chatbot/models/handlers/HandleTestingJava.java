@@ -23,7 +23,10 @@ public class HandleTestingJava extends TelegramLongPollingBot {
 
         try{
 
-            message.setText("mensagem enviada: "+command);
+            String response = ResponsesType.getResponse(command);
+
+
+            message.setText(response);
 
             execute(message);
 
