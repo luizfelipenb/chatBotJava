@@ -1,16 +1,16 @@
 package com.chatbot.chatbot.models.handlers;
 
 class Pedido{
-    String pizza = "";
-    String refrigerante = "";
-    int valor = 0;
+    String pizza;
+    String refrigerante;
+    int valor;
 }
 
 public class ResponsesType {
 
-    public static String getResponse(String question){
+    public static String getResponse(String question, Pedido pedido){
         String response = "Envie uma mensagem valida";
-        Pedido pedido = new Pedido();
+
 
         if(question.toLowerCase().equals("boa noite")) {
             response = "Ola boa noite, bem vindo a Gallo`s Pizzaria, gostaria de receber o cardapio?" +
@@ -18,6 +18,7 @@ public class ResponsesType {
         }else if(question.toLowerCase().equals("sim")){
             response = "Para pedir pizza de 2 sabores digite FALAR COM UM ATENDENTE" +
                     "\n Apenas 1 sabor escolha uma das numerações abaixo:" +
+                    "\n" +
                     "\n 1 - Calabresa R$20,00    2 - Mussarela R$20,00 \n 3 - Portuguesa R$25,00    4 - Marguerita R$25,00" +
                     "\n 5 - Frango com Catupiry R$27,00    6 - Atum R$27,00 \n 7 - Presunto R$22,00    8 - Palmito R$24,00" +
                     "\n 9 - Lombo canadense R$30,00    10 - Paulista R$25,00";
@@ -33,87 +34,119 @@ public class ResponsesType {
             pedido.valor = 20;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!" +
                     "\n Seu pedido ficou R$" + pedido.valor + ",00"+
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO para finalizar seu pedido:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina"+
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("2")){
             pedido.pizza = "Mussarela";
             pedido.valor = 20;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!"+
                     "\n Seu pedido ficou R$" + pedido.valor + ",00" +
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO para finalizar seu pedido:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina"+
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("3")){
             pedido.pizza = "Portuguesa";
             pedido.valor = 25;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!"+
                     "\n Seu pedido ficou R$" + pedido.valor + ",00"+
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO para finalizar seu pedido:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina"+
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("4")){
             pedido.pizza = "Marguerita";
             pedido.valor = 25;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!"+
                     "\n Seu pedido ficou R$" + pedido.valor + ",00"+
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO para finalizar seu pedido:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina"+
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("5")){
             pedido.pizza = "Frango com catupiry";
             pedido.valor = 27;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!"+
                     "\n Seu pedido ficou R$" + pedido.valor + ",00"+
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO para finalizar seu pedido:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina"+
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("6")){
             pedido.pizza = "Atum";
             pedido.valor = 27;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!"+
                     "\n Seu pedido ficou R$" + pedido.valor + ",00"+
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO para finalizar seu pedido:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina"+
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("7")){
             pedido.pizza = "Presunto";
             pedido.valor = 22;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!"+
                     "\n Seu pedido ficou R$" + pedido.valor + ",00" +
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO para finalizar seu pedido:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina"+
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("8")){
             pedido.pizza = "Palmito";
             pedido.valor = 24;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!"+
                     "\n Seu pedido ficou R$" + pedido.valor + ",00" +
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO para finalizar seu pedido:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina"+
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("9")){
             pedido.pizza = "Lombo canadense";
             pedido.valor = 30;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!"+
                     "\n Seu pedido ficou R$" + pedido.valor + ",00"+
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO para finalizar seu pedido:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina"+
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("10")){
             pedido.pizza = "Paulista";
             pedido.valor = 25;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!"+
                     "\n Seu pedido ficou R$" + pedido.valor + ",00" +
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO para finalizar seu pedido:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina"+
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("7")){
             pedido.pizza = "Presunto";
             pedido.valor = 10;
             response = "Pizza " + pedido.pizza + " adicionada ao pedido!"+
                     "\n Seu pedido ficou R$" + pedido.valor + ",00" +
+                    "\n" +
                     "\n Gostaria de adicionar refrigerante? Se sim digite o nome ou FINALIZAR PEDIDO:" +
+                    "\n" +
                     "\n Coca cola, Guarana, Pepsi, Fanta Laranja, Fanta Uva, Tubaina" +
                     "\n " +
                     "\n Para limpar seu pedido digite LIMPAR";
@@ -121,31 +154,37 @@ public class ResponsesType {
             pedido.refrigerante = "Coca Cola";
 
             response = pedido.refrigerante + " adicionado ao pedido, digite FINALIZAR PEDIDO para escolher a forma de pagamento" +
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("guarana")){
             pedido.refrigerante = "Guarana";
 
             response = pedido.refrigerante + " adicionado ao pedido, digite FINALIZAR PEDIDO para escolher a forma de pagamento" +
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("pepsi")){
             pedido.refrigerante = "Pepsi";
 
             response = pedido.refrigerante + " adicionado ao pedido, digite FINALIZAR PEDIDO para escolher a forma de pagamento" +
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("fanta laranja")){
             pedido.refrigerante = "Fanta Laranja";
 
             response = pedido.refrigerante + " adicionado ao pedido, digite FINALIZAR PEDIDO para escolher a forma de pagamento" +
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("fanta uva")){
             pedido.refrigerante = "Fanta Uva";
 
             response = pedido.refrigerante + " adicionado ao pedido, digite FINALIZAR PEDIDO para escolher a forma de pagamento" +
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("tubaina")){
             pedido.refrigerante = "Tubaina";
 
             response = pedido.refrigerante + " adicionado ao pedido, digite FINALIZAR PEDIDO para escolher a forma de pagamento" +
+                    "\n" +
                     "\n Para limpar seu pedido digite LIMPAR";
         }else if(question.toLowerCase().equals("limpar")){
             pedido.refrigerante = "";
@@ -154,6 +193,7 @@ public class ResponsesType {
 
             response = "Para pedir pizza de 2 sabores digite FALAR COM UM ATENDENTE" +
                     "\n Apenas 1 sabor escolha uma das numerações abaixo:" +
+                    "\n" +
                     "\n 1 - Calabresa R$20,00    2 - Mussarela R$20,00 \n 3 - Portuguesa R$25,00    4 - Marguerita R$25,00" +
                     "\n 5 - Frango com Catupiry R$27,00    6 - Atum R$27,00 \n 7 - Presunto R$22,00    8 - Palmito R$24,00" +
                     "\n 9 - Lombo canadense R$30,00    10 - Paulista R$25,00";
