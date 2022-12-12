@@ -17,13 +17,17 @@ public class HandleTestingJava extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
+        Pedido pedido = new Pedido();
         SendMessage message = new SendMessage();
         String command = update.getMessage().getText();
         message.setChatId(update.getMessage().getChatId().toString());
 
         try{
 
-            message.setText("mensagem enviada: "+command);
+            String response = ResponsesType.getResponse(command, pedido);
+
+
+            message.setText(response);
 
             execute(message);
 
